@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escudo Energético Quantum | Nexus Weapons Corp.</title>
+  <meta name="description" content="Ficha técnica del Escudo Energético Quantum. Sistema de defensa personal que absorbe el 98% de la energía entrante.">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="ficha-arma">
+
+  <header>
+    <nav>
+      <div class="logo">NEXUS</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#productos">Arsenal</a></li>
+        <li><a href="../index.html#empresa">Empresa</a></li>
+        <li><a href="../index.html#ceo">CEO</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+    </nav>
+  </header>
+
+  <main class="ficha-contenido">
+    <div class="ficha-header">
+      <h1>Escudo Energético Quantum</h1>
+      <p class="subtitulo">Sistema de defensa personal avanzado</p>
+    </div>
+
+    <div class="ficha-grid">
+      <div class="ficha-media">
+        <img src="../img/quantum-shield.jpg" alt="Escudo Energético Quantum" class="arma-imagen" id="imagen-estatica">
+        
+        <video muted loop playsinline class="video-arma" id="video-arma" style="display: none;">
+          <source src="../img/quantum-shield.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5.
+        </video>
+        
+        <button id="activar-video" class="boton-activar-video">▶️ Reproducir animación</button>
+      </div>
+
+      <div class="ficha-detalles">
+        <section class="descripcion">
+          <h2>Descripción</h2>
+          <p>
+            El Escudo Energético Quantum genera un campo de contención cuántica alrededor del usuario, 
+            capaz de absorber el 98% de la energía entrante (balas, plasma, explosiones). 
+            Puede operar en modo móvil (muñequera) o estacionario (barra de cinturón), 
+            con una duración de 5 minutos a máxima potencia.
+          </p>
+        </section>
+
+        <section class="caracteristicas">
+          <h2>Características Técnicas</h2>
+          <ul>
+            <li><strong>Eficiencia de absorción:</strong> 98%</li>
+            <li><strong>Modos:</strong> Móvil (muñequera), Estacionario (cinturón)</li>
+            <li><strong>Duración:</strong> 5 minutos (máxima potencia), 20 minutos (modo ahorro)</li>
+            <li><strong>Fuente de energía:</strong> Micro-reactor de antimateria</li>
+            <li><strong>Rango de protección:</strong> Radio de 1.2 metros</li>
+            <li><strong>Peso:</strong> 1.1 kg (modo móvil)</li>
+            <li><strong>Recarga:</strong> 30 segundos mediante inducción cuántica</li>
+            <li><strong>Seguridad:</strong> Sincronización neural obligatoria</li>
+          </ul>
+        </section>
+
+        <section class="funcionalidad">
+          <h2>Formas de Uso</h2>
+          <p>
+            Utilizado en:
+          </p>
+          <ul>
+            <li><strong>Combate cuerpo a cuerpo:</strong> Protección contra armas energéticas.</li>
+            <li><strong>Evacuación de zonas hostiles:</strong> Barrera móvil contra fuego cruzado.</li>
+            <li><strong>Misiones diplomáticas:</strong> Defensa no letal en entornos civiles.</li>
+            <li><strong>Exploración de zonas radiactivas:</strong> Filtra radiación ionizante.</li>
+          </ul>
+        </section>
+
+        <a href="../index.html#productos" class="boton-volver">← Volver al Arsenal</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nexus Weapons Corp. — Todos los derechos reservados.</p>
+    <p class="disclaimer">Este es un proyecto educativo. Ninguna de estas armas existe en la realidad.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const imagen = document.getElementById('imagen-estatica');
+      const video = document.getElementById('video-arma');
+      const boton = document.getElementById('activar-video');
+
+      function toggleVideo() {
+        if (video.style.display === 'none') {
+          imagen.style.display = 'none';
+          video.style.display = 'block';
+          video.play().catch(e => {
+            console.warn("Reproducción iniciada o bloqueada por el navegador, pero el video se muestra.");
+          });
+        } else {
+          video.pause();
+          video.currentTime = 0;
+          video.style.display = 'none';
+          imagen.style.display = 'block';
+        }
+      }
+
+      imagen.addEventListener('click', toggleVideo);
+      boton.addEventListener('click', toggleVideo);
+    });
+  </script>
+</body>
+</html>

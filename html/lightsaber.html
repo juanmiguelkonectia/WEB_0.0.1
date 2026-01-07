@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sable Láser MK-VII | Nexus Weapons Corp.</title>
+  <meta name="description" content="Ficha técnica detallada del Sable Láser MK-VII. Arma icónica de combate cuerpo a cuerpo con tecnología de plasma contenido.">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="ficha-arma">
+
+  <!-- ENCABEZADO -->
+  <header>
+    <nav>
+      <div class="logo">NEXUS</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#productos">Arsenal</a></li>
+        <li><a href="../index.html#empresa">Empresa</a></li>
+        <li><a href="../index.html#ceo">CEO</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="ficha-contenido">
+    <div class="ficha-header">
+      <h1>Sable Láser MK-VII</h1>
+      <p class="subtitulo">Arma de combate cuerpo a cuerpo de élite</p>
+    </div>
+
+    <div class="ficha-grid">
+      <div class="ficha-media">
+        <img src="../img/lightsaber.jpg" alt="Sable Láser MK-VII" class="arma-imagen" id="imagen-estatica">
+        
+        <video muted loop class="video-arma" id="video-arma" style="display: none;">
+          <source src="../img/lightsaber.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5.
+        </video>
+        
+        <button id="activar-video" class="boton-activar-video">▶️ Reproducir animación</button>
+      </div>
+
+      <div class="ficha-detalles">
+        <section class="descripcion">
+          <h2>Descripción</h2>
+          <p>
+            El Sable Láser MK-VII es la evolución definitiva del arma icónica de los caballeros de la galaxia. 
+            Utiliza un núcleo de cristal kyber sintético para generar una hoja de plasma contenido de 1.2 metros, 
+            capaz de cortar prácticamente cualquier material conocido. 
+            Su empuñadura ergonómica incluye un sistema de activación por huella genética, 
+            impidiendo su uso por personal no autorizado.
+          </p>
+        </section>
+
+        <section class="caracteristicas">
+          <h2>Características Técnicas</h2>
+          <ul>
+            <li><strong>Longitud de hoja:</strong> 1.2 m</li>
+            <li><strong>Temperatura del plasma:</strong> 25,000°C</li>
+            <li><strong>Fuente de energía:</strong> Celda de energía T-7 (72 horas de uso continuo)</li>
+            <li><strong>Modos de activación:</strong> Estándar, Duero, Entrenamiento</li>
+            <li><strong>Seguridad:</strong> Bloqueo por ADN y huella genética</li>
+            <li><strong>Peso total:</strong> 1.2 kg</li>
+            <li><strong>Material del mango:</strong> Durasteel reforzado con fibra de carbono</li>
+            <li><strong>Compatibilidad:</strong> Soporte para adaptadores de doble hoja</li>
+          </ul>
+        </section>
+
+        <section class="funcionalidad">
+          <h2>Formas de Uso</h2>
+          <p>
+            El MK-VII está diseñado para múltiples escenarios:
+          </p>
+          <ul>
+            <li><strong>Combate cuerpo a cuerpo:</strong> Ideal para duelos de precisión y defensa personal.</li>
+            <li><strong>Entrenamiento:</strong> Modo de baja potencia para prácticas sin riesgo.</li>
+            <li><strong>Operaciones especiales:</strong> Funciona en entornos de gravedad cero gracias a su estabilizador giroscópico.</li>
+            <li><strong>Simulación táctica:</strong> Compatible con sistemas de realidad aumentada para entrenamiento en campo.</li>
+          </ul>
+          <p>
+            El sistema de retroalimentación permite al usuario sentir la resistencia del corte, mejorando la precisión en combate.
+          </p>
+        </section>
+
+        <a href="../index.html#productos" class="boton-volver">← Volver al Arsenal</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nexus Weapons Corp. — Todos los derechos reservados.</p>
+    <p class="disclaimer">Este es un proyecto educativo. Ninguna de estas armas existe en la realidad.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const imagen = document.getElementById('imagen-estatica');
+      const video = document.getElementById('video-arma');
+      const boton = document.getElementById('activar-video');
+
+      function toggleVideo() {
+        if (video.style.display === 'none') {
+          imagen.style.display = 'none';
+          video.style.display = 'block';
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+          video.style.display = 'none';
+          imagen.style.display = 'block';
+        }
+      }
+
+      imagen.addEventListener('click', toggleVideo);
+      boton.addEventListener('click', toggleVideo);
+    });
+  </script>
+</body>
+</html>

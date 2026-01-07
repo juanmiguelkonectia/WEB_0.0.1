@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cañón de Plasma PX-9 | Nexus Weapons Corp.</title>
+  <meta name="description" content="Ficha técnica del Cañón de Plasma PX-9. Arma de energía de largo alcance con temperatura de plasma superior a 5000°C.">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="ficha-arma">
+
+  <header>
+    <nav>
+      <div class="logo">NEXUS</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#productos">Arsenal</a></li>
+        <li><a href="../index.html#empresa">Empresa</a></li>
+        <li><a href="../index.html#ceo">CEO</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+    </nav>
+  </header>
+
+  <main class="ficha-contenido">
+    <div class="ficha-header">
+      <h1>Cañón de Plasma PX-9</h1>
+      <p class="subtitulo">Arma de energía de largo alcance</p>
+    </div>
+
+    <div class="ficha-grid">
+      <div class="ficha-media">
+        <img src="../img/plasma-gun.jpg" alt="Cañón de Plasma PX-9" class="arma-imagen" id="imagen-estatica">
+        
+        <!-- Contenedor del video con fallback -->
+        <div class="video-contenedor" id="video-contenedor" style="display: none;">
+          <video muted loop playsinline class="video-arma" id="video-arma">
+            <source src="../img/plasma-gun.mp4" type="video/mp4">
+          </video>
+          <div class="video-fallback">Cargando video...</div>
+        </div>
+        
+        <button id="activar-video" class="boton-activar-video">▶️ Reproducir animación</button>
+      </div>
+
+      <div class="ficha-detalles">
+        <section class="descripcion">
+          <h2>Descripción</h2>
+          <p>
+            El Cañón de Plasma PX-9 es una arma de destrucción masiva diseñada para operaciones de asalto pesado. 
+            Genera un haz de plasma ionizado a 5000°C, capaz de derretir blindajes de acero reforzado en segundos. 
+            Su sistema de refrigeración por helio líquido permite disparos sostenidos sin sobrecalentamiento.
+          </p>
+        </section>
+
+        <section class="caracteristicas">
+          <h2>Características Técnicas</h2>
+          <ul>
+            <li><strong>Temperatura del plasma:</strong> 5000°C</li>
+            <li><strong>Alcance efectivo:</strong> 800 metros</li>
+            <li><strong>Fuente de energía:</strong> Batería de fusión microcompacta (30 disparos)</li>
+            <li><strong>Tiempo de recarga térmica:</strong> 8 segundos</li>
+            <li><strong>Peso:</strong> 4.8 kg</li>
+            <li><strong>Modos de disparo:</strong> Estándar, Carga máxima, Sostenido</li>
+            <li><strong>Refrigeración:</strong> Sistema de helio líquido integrado</li>
+            <li><strong>Seguridad:</strong> Bloqueo biométrico y geolocalización</li>
+          </ul>
+        </section>
+
+        <section class="funcionalidad">
+          <h2>Formas de Uso</h2>
+          <p>
+            Ideal para:
+          </p>
+          <ul>
+            <li><strong>Asalto de fortificaciones:</strong> Derribar muros y bunkers.</li>
+            <li><strong>Defensa planetaria:</strong> Neutralizar vehículos blindados.</li>
+            <li><strong>Operaciones especiales:</strong> Uso en entornos con baja gravedad.</li>
+            <li><strong>Entrenamiento simulado:</strong> Modo de baja potencia con retroalimentación táctil.</li>
+          </ul>
+        </section>
+
+        <a href="../index.html#productos" class="boton-volver">← Volver al Arsenal</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nexus Weapons Corp. — Todos los derechos reservados.</p>
+    <p class="disclaimer">Este es un proyecto educativo. Ninguna de estas armas existe en la realidad.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const imagen = document.getElementById('imagen-estatica');
+      const videoContenedor = document.getElementById('video-contenedor');
+      const video = document.getElementById('video-arma');
+      const fallback = videoContenedor.querySelector('.video-fallback');
+      const boton = document.getElementById('activar-video');
+
+      // Detectar si el video se puede reproducir
+      video.addEventListener('loadeddata', () => {
+        fallback.style.display = 'none';
+      });
+
+      video.addEventListener('error', () => {
+        fallback.textContent = '⚠️ Video no disponible';
+        fallback.style.color = '#ff6b6b';
+      });
+
+      function toggleVideo() {
+        if (videoContenedor.style.display === 'none') {
+          imagen.style.display = 'none';
+          videoContenedor.style.display = 'block';
+          video.play().catch(e => console.log("Reproducción iniciada o bloqueada:", e));
+        } else {
+          video.pause();
+          video.currentTime = 0;
+          videoContenedor.style.display = 'none';
+          imagen.style.display = 'block';
+        }
+      }
+
+      imagen.addEventListener('click', toggleVideo);
+      boton.addEventListener('click', toggleVideo);
+    });
+  </script>
+
+  <!-- Estilo para el fallback (incrustado para no tocar el CSS principal) -->
+  <style>
+    .video-contenedor {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .video-arma {
+      width: 100%;
+      border-radius: 12px;
+      border: 2px solid var(--neon-blue);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+      display: block;
+      background: #000;
+      filter: brightness(1.2) contrast(1.1);
+    }
+    .video-fallback {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--neon-cyan);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+  </style>
+</body>
+</html>
