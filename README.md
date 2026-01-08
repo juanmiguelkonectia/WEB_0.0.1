@@ -122,9 +122,6 @@ El proyecto está sincronizado con la nube para facilitar su acceso y revisión.
 
 <img width="512" height="346" alt="image" src="https://github.com/user-attachments/assets/37f5db41-a0b2-47f7-9168-f513aca911df" />
 
-<div style="border: 2px solid black; display: inline-block;">
-  <img src="<img width="512" height="346" alt="image" src="https://github.com/user-attachments/assets/37f5db41-a0b2-47f7-9168-f513aca911df" />
-</div>
 
 
 
